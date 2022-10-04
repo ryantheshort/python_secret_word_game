@@ -78,6 +78,28 @@ def play_game():
         print("Congratulations! You got it in", number_guesses, "guesses.")
     else:
         print("Sorry, you lost! The word was: ", word)
+        
+
+# Draw the hangman table here
+def draw_hangman(guess_number):
+    print("____")
+    print("    |")
+    if guess_number == 0:
+        print()
+    elif guess_number == 1:
+        print("    O\n")
+    elif guess_number == 2:
+        print("    O\n    |\n")
+    elif guess_number == 3:
+        print("    O\n   \\|\n")
+    elif guess_number == 4:
+        print("    O\n   \\|/\n")
+    elif guess_number == 5:
+        print("    O\n   \\|/\n    |\n")      
+    elif guess_number == 6:
+        print("    O\n   \\|/\n    |\n   /\n")
+    elif guess_number == 7:
+        print("    O\n   \\|/\n    |\n   / \\\n")
 
 
 def main():

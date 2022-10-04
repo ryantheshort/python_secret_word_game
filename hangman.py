@@ -10,7 +10,7 @@ def add_spaces(word):
     word_with_spaces = " ".join(word)
     return word_with_spaces
 
-# Draw the display (IF YOU HAVE TIME)
+# Draw the display/UI
 def draw_screen(number_wrong, number_guesses, guessed_letters, displayed_word):
     print("-" * 79)
     draw_hangman(number_wrong)
@@ -23,7 +23,7 @@ def draw_screen(number_wrong, number_guesses, guessed_letters, displayed_word):
 def get_letter(guessed_letters):
     while True:
         guess = input("Enter a letter: ").strip().upper()
-    
+    # Strip removes any leading (spaces at the beginning) and trailing (spaces at the end) characters 
         # Make sure the user enters a letter and only one letter
         if guess == "" or len(guess) > 1:
             print("Invalid entry. " +
@@ -37,7 +37,6 @@ def get_letter(guessed_letters):
             return guess
 
 # Input/process/draw technique. Common in game programmng, evidently.
-
 def play_game():
     word = get_word()
 
@@ -73,13 +72,11 @@ def play_game():
         draw_screen(number_wrong, number_guesses, guessed_letters, displayed_word)
     
     print("-" * 79)
-
     if remaining_letters == 0:
         print("Congratulations! You got it in", number_guesses, "guesses.")
     else:
         print("Sorry, you lost! The word was: ", word)
         
-
 # Draw the hangman table here
 def draw_hangman(guess_number):
     print("____")
@@ -100,7 +97,6 @@ def draw_hangman(guess_number):
         print("    O\n   \\|/\n    |\n   /\n")
     elif guess_number == 7:
         print("    O\n   \\|/\n    |\n   / \\\n")
-
 
 def main():
     number_of_guesses = 7

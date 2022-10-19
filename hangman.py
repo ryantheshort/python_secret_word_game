@@ -4,6 +4,7 @@ import wordlist
 def get_word(): 
     word = wordlist.get_random_word()
     return word.upper()
+    
 
 # Add spaces between characters
 def add_spaces(word):
@@ -24,7 +25,7 @@ def get_letter(guessed_letters):
     while True:
         guess = input("Enter a letter: ").strip().upper()
     # Strip removes any leading (spaces at the beginning) and trailing (spaces at the end) characters 
-        # Make sure the user enters a letter and only one letter
+        # Make sure the user enters a letter and only one letter. "len()" means length. # of guesses..
         if guess == "" or len(guess) > 1:
             print("Invalid entry. " +
                   "Please enter one and only one letter.")
@@ -61,7 +62,7 @@ def play_game():
             for char in word:
                 if char in guessed_letters:
                     displayed_word += char
-                    remaining_letters += 1
+                    remaining_letters -= 1
                 else:
                     displayed_word += "_"
         else:
